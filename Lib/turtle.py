@@ -1556,9 +1556,9 @@ class TNavigator(object):
         """Helper function for degrees() and radians()"""
         self._fullcircle = fullcircle
         self._degreesPerAU = 360/fullcircle
-        if self._mode == "standard":
+        if self._mode in ["standard", "world"]:
             self._angleOffset = 0
-        else:
+        else: # mode == "logo":
             self._angleOffset = fullcircle/4.
 
     def degrees(self, fullcircle=360.0):
